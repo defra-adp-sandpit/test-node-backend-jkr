@@ -1,0 +1,20 @@
+services:
+  test-node-backend-jkr:
+    build:
+      context: .
+      target: production
+    image: test-node-backend-jkr
+    container_name: test-node-backend-jkr
+    depends_on:
+      - test-node-backend-jkr-postgres
+    environment:
+      APPINSIGHTS_CLOUDROLE: test-node-backend-jkr-local
+      APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
+
+
+  test-node-backend-jkr-postgres:
+    image: postgres:15.6-alpine
+    environment:
+      POSTGRES_DB: test-node-backend-jkr
+      POSTGRES_PASSWORD: ppp
+      POSTGRES_USERNAME: postgres

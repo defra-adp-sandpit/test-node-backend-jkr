@@ -1,0 +1,8 @@
+{{- include "adp-helm-library.deployment" (list . "test-node-backend-jkr.deployment") -}}
+{{- define "test-node-backend-jkr.deployment" -}}
+spec:
+  template:
+    spec:
+      containers:
+      - {{ include "adp-helm-library.container" (list . "test-node-backend-jkr.container") }}
+{{- end -}}

@@ -1,0 +1,6 @@
+
+{{- include "adp-aso-helm-library.flexible-servers-db" (list . "test-node-backend-jkr.flexible-servers-db") -}}
+
+{{- define "test-node-backend-jkr.flexible-servers-db" }}
+{{ end -}}
+
